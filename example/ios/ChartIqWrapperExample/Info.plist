@@ -31,10 +31,33 @@
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
-			<key>NSAllowsArbitraryLoads</key>
-			<false/>
-			<key>NSAllowsLocalNetworking</key>
-			<true/>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>chartiq.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+			<key>mobile.demo.chartiq.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+			</dict>
+		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
@@ -55,5 +78,44 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>WKAppBoundDomains</key>
+	<array>
+		<string>chartiq.com</string>
+		<string>mobile.demo.chartiq.com</string>
+		<string>*.chartiq.com</string>
+		<string>*.demo.chartiq.com</string>
+	</array>
+	<key>NSAllowsArbitraryLoadsInWebContent</key>
+	<true/>
+	<key>WKWebViewConfiguration</key>
+	<dict>
+		<key>AllowsInlineMediaPlayback</key>
+		<true/>
+		<key>allowsBackForwardNavigationGestures</key>
+		<true/>
+		<key>preferences.javaScriptEnabled</key>
+		<true/>
+		<key>preferences.javaScriptCanOpenWindowsAutomatically</key>
+		<true/>
+		<key>WebKitPreferences.allowsContentJavaScript</key>
+		<true/>
+		<key>WebKitPreferences.javaScriptCanOpenWindowsAutomatically</key>
+		<true/>
+		<key>WebKitPreferences.developerExtrasEnabled</key>
+		<true/>
+		<key>WebKitPreferences.allowFileAccessFromFileURLs</key>
+		<true/>
+		<key>WebKitPreferences.allowUniversalAccessFromFileURLs</key>
+		<true/>
+	</dict>
+	<key>EnableWebKitDebugProxy</key>
+	<true/>
+	<key>WKWebViewDataStore</key>
+	<dict>
+		<key>websiteDataStore</key>
+		<string>WKWebsiteDataStoreDefaultStore</string>
+		<key>allowsWebPrivacy</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
